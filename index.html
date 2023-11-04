@@ -1,18 +1,54 @@
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Redirect Page</title>
+  <style>
+    .pulse-button {
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pulse-button:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      transform: scale(0);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .pulse-button:hover:before {
+      transform: scale(1);
+    }
+
+    .pulse-button:active:before {
+      transform: scale(0.8);
+    }
+  </style>
 </head>
 <body>
-  <h1>Click the button to continue to the destination website:</h1>
-  <button onclick="redirect()">Continue</button>
+<h1>Click the button to continue to the destination website:</h1>
+  
+  <button class="pulse-button" onclick="redirect()">Continue</button>
 
-  <script>
+
+<script>
     function redirect() {
       // Redirect the user to the specified URL
       window.location.href = "https://sites.google.com/view/saifullahkhan/home";
     }
   </script>
+
 </body>
 </html>
